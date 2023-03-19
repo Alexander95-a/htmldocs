@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Документ без названия</title>
+    <link href="src/css/index.css"  rel="stylesheet" type="text/css">
+    <style>
+        .page{
+            border:solid 1px black;
+            width:800px;
+            margin:0px auto;
+            height:500px;
+            text-align:center;
+            position:relative
+        }
+    
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>Какая то информация</h1>
+    Участник 1 <label id="fio1"><input class="inputs" id="InputFio1" type="text" /></label><br>
+    Участник 2  <label id="fio2"><input class="inputs" id="InputFio2" type="text" /></label><br>
+    <!-- Баллы первого участника <label id="score1"><input id="InputScore1" type="text" /></label><br>
+    Баллы второго участника  <label id="score2"><input id="InputScore2" type="text" /></label><br> -->
+    Раунд  <label id="round"><input class="inputs" id="InputRound" type="text" /></label><br>
+    Пол и вес  <label id="gender"><input class="inputs" id="InputGender" type="text" /></label><br>
+   
+    
+    <input class="buttons" type="button" value="Отправить данные на другую страницу" onclick="new_page()"/>
+    <input class="buttons" type="button" value="Очистить" onclick="localStorage.clear();"/>
+</div>
+
+
+<script type="text/javascript" src="src/js/SEND.js"></script>
+<script src="src/js/PressKey.js"></script>
+</body>
+</html>

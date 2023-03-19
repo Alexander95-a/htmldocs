@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+var loc = location.href;
+var n1 = loc.length;
+var n2 = loc.indexOf('=');
+var txt = decodeURI(loc.substr(n2+1,n1-n2));
+var box = document.getElementById('box');
+box.innerHTML = txt;
+
+</body>
+</html>

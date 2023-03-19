@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="src/js/2.1.js"></script>
+<!--    <script type="text/javascript" src="jquery-1.8.0.min.js"></script>-->
+    <title>Tablo 2</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="autoUpdate2.js"></script>
+</head>
+<style type="text/css">
+    timerз {
+        font: bold 2em Arial, Tahome, sans-serif; /* Параметры шрифта */
+        color: #fff;  background: #375D4C;
+        padding: 0 10px;
+    }
+    H1 SPAN {
+        position: relative; /* Относительное позиционирование */
+        top: 0.3em; /* Сдвигаем вниз */
+    }
+
+     .timer, .fio2, #layer3, #layer4 {
+         position: relative; /* Относительное позиционирование */
+     }
+    #layer1, #layer3 {
+        font-size: 50px; /* Размер шрифта в пикселах */
+        color: #000080; /* Синий цвет текста */
+    }
+    .timer{
+        top: -850px; /* Сдвигаем текст вверх */
+
+        /*color: #ffa500; !* Оранжевый цвет текста *!*/
+        /*font-size:70px;  !* Размер шрифта в пикселах *!*/
+    }
+    .timer { z-index: 2; }
+    .fio2 { z-index: 1; }
+    #layer3 { z-index: 3; }
+    #layer4 { z-index: 4; }
+    .timer2{
+
+        position: absolute;
+        width: 400px;
+        height: 200px;
+        top: 450px; /* Сдвигаем текст вверх */
+        border-radius: 15px;
+        background-color: white;
+        z-index: 10;
+    }
+    .img{
+        position: relative;
+        margin-left: 45.8vw;
+        top: -1415px;
+        z-index: 3;
+    }
+    .main{
+        display: block;
+        position: relative;
+        top: -200px;
+    }
+    .tt{
+        font-size: 2vh;
+    }
+
+
+    .t2{
+        font-size: 4vh;
+        position: relative;
+        margin-left: 45.8vw;
+        top: 10px;
+        z-index: 5;
+        color: #ffffff;
+    }
+    .d1{
+
+        display: flex;
+        justify-content: center;
+
+
+    }
+</style>
+<div class="main">
+    <div id="liveData2"  class="fio2">
+        <p>Loading Data...</p>
+
+    </div>
+
+<!--    <div class="img">-->
+
+<!--        <img src="src/img/logo.png" width="200px">-->
+
+<!--    </div>-->
+    <div class="d1">
+        <div class="timer2" >
+            <p align="center" class="tt">Минут : секунд</p>
+
+            <p class="timer-text" id="result_shops">2:00</p>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<script src="src/js/secundant.js"></script>
+<script src="src/js/PressKey.js"></script>
+<script>
+    $(document).ready(function(){
+
+
+//var output = $('h1');
+        var isPaused = false;
+        var time = 0;
+
+        var t = window.setInterval(function()
+        {
+            if(!isPaused)
+            {
+                //time++;
+                // output.text("Seconds: " + time);
+                $("#result_shops").load('time2.php');
+            }
+        }, 1000);
+
+//with jquery
+        $('.pause').on('click', function(e)
+        {
+            e.preventDefault();
+            isPaused = true;
+        });
+
+        $('.play').on('click', function(e)
+        {
+            e.preventDefault();
+            isPaused = false;
+        });
+
+
+    });
+</script>
+</html>

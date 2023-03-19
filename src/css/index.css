@@ -1,0 +1,19 @@
+.inputs{
+    width: 60%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttons{
+    width: 60%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-top: 30px;
+    vertical-align: bottom;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}

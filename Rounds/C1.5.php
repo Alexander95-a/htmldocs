@@ -1,0 +1,259 @@
+<?php require_once("../includes/connect.php");
+$a=$_GET['a'];
+$b=$_GET['b'];
+$c=$_GET['c'];
+$d=$_GET['d'];
+$e=$_GET['e'];
+$f=$_GET['f'];
+$q=$_GET['q'];
+
+$z=$_GET['z'];
+$g=$_GET['g'];
+$w=$_GET['w'];
+$cc=$_GET['cc'];
+$sr=$_GET['sr'];
+
+$info2 = mysqli_query($conn, "SELECT * FROM `comp` WHERE `comp`.`id` = $q");
+$info2 = mysqli_fetch_assoc($info2);?>
+
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Round 1</title>
+</head>
+<header>
+    <h2> Round 1</h2>
+    <?php require_once ("../includes/headerC.php");?>
+</header>
+<style>
+    .add{
+        background-color: #28c536;
+
+        color: #050505;
+        padding: 3px 10px;
+        text-align: center;
+        text-decoration: #333333 ;
+        display: inline-block;
+        font-size: 15px;
+        margin: 2px 2px;
+        cursor: pointer;
+        border: 1px solid #333;
+    }
+    table {
+        margin: 0px;
+
+        width: 500px;
+
+        border-collapse: collapse;
+
+        border: 2px solid black;
+
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background: #606060;
+        color: #fff;
+        border-collapse: collapse;
+
+        border: 2px solid black
+    }
+
+
+
+
+    td {
+
+
+        padding: 3px;
+
+        border: 1px solid ;
+
+        text-align: center;
+
+    }
+
+    @media print { /* Стиль для печати */
+        body{
+            visibility: hidden;
+        }
+        /* Блок который нужно отобразить */
+        #print-title {
+            visibility: visible;
+            margin-top: -250px;
+
+        }
+        #print-text {
+            visibility: visible;
+            margin-top: -250px;
+        }
+        #no {
+            visibility: hidden;
+            margin-top: -250px;
+
+        }
+
+    }
+
+
+
+</style>
+
+
+
+
+<body>
+<div style="float:left;">
+    <div id="print-title">
+
+    <p><?= $d ?>, <?= $p ?>:<?= $w ?> kg</p>
+
+    <table  style="float: left;">
+        <tr>
+            <th colspan="5">Date:<?= $a ?></th>
+
+        </tr>
+
+        <tr>
+            <th colspan="5">Red side</th>
+
+        </tr>
+        <tr>
+
+            <th>lot</th>
+            <th>ФИО</th>
+            <th>Team</th>
+
+            <th>Win</th>
+            <th>Lose</th>
+
+            <th>VS</th>
+
+
+
+        </tr>
+        <?php
+        $info = mysqli_query($conn, "SELECT * FROM `g1` INNER JOIN `tablo1` using (lot) WHERE `g1`.`uid` % 2 <> 0 AND `lot` !=0 AND `cid` = '$z' AND `qid` = '$z'  AND `gendage` LIKE '$g' AND `wc` = '$w' ORDER BY `g1`.`lot` ASC ");
+
+        foreach ($info as $info){
+        ?>
+        <tr>
+
+            <td><?=$info['uid']?></td>
+            <td><?= $info['Name']?></a></td>
+            <td><?=$info['Team']?></td> <!-- команда-->
+
+            <td id="no"><?=$info['R1']?></td><!-- победа-->
+            <td id="no"><?=$info['L1']?></td><!-- поражение-->
+
+            <td id="no"></td>
+
+
+            <?php
+            }
+            ?>
+        <tr>
+            <th colspan="5" id="no">M.Referee:<?= $e ?></th>
+
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th colspan="5" ><?= $c ?>:<?= $b ?></th>
+
+        </tr>
+        <tr>
+            <th colspan="5">Blue side</th>
+        </tr>
+        <tr>
+            <th>Win</th>
+            <th>Lose</th>
+            <th>lot</th>
+            <th>ФИО</th>
+            <th>Team</th>
+
+
+        </tr>
+
+        <?php
+        $info1 = mysqli_query($conn, "SELECT * FROM `g1` INNER JOIN `tablo1`  using (lot) WHERE `g1`.`uid` % 2 = 0 AND `lot` !=0 AND `cid` = '$z' AND `qid` = '$z'  AND `gendage` LIKE '$g' AND `wc` = '$w' ORDER BY `g1`.`lot` ASC  ");
+
+        foreach ($info1 as $info1){
+            ?>
+            <td id="no"><?=$info1['R1']?></td><!-- победа-->
+            <td id="no"><?=$info1['L1']?></td><!-- поражение-->
+            <td><?=$info1['uid']?></td>
+            <td><?=$info1['Name']?></td>
+            <td><?=$info1['Team']?></td> <!-- команда-->
+
+        <?php
+
+        if ($sr==0) {
+
+            ?>
+            <td>Выберите № секретаря</td>
+
+            <?php
+        }
+        ?>
+        <?php
+
+        if ($sr>0) {
+            ?>
+            <td id="no"> <a href="../scripts/updateC.php?l=c&id=<?= $info1['lot'] ?>&n=1&w=<?=$w?>&g=<?=$g?>&q=<?=$q?>&z=<?=$z?>&di=2&sr=<?= $sr ?>&cc=<?= $cc ?>&t=3">Update</a> </td>
+            </tr>
+
+            <?php
+        }
+        ?>
+
+        <tr>
+
+
+            <?php
+            }
+            ?>
+
+        <tr>
+            <th colspan="5" id="no">M.Secretary:<?= $e ?></th>
+
+        </tr>
+    </table>
+<!--    <a href="../scripts/lone1C.php?r=3&w=--><?//=$w?><!--&g=--><?//=$g?><!--&q=--><?//= $q ?><!--&z=--><?//= $z ?><!--&id=4&n=2&sr=--><?//= $sr ?><!--&cc=--><?//= $cc ?><!--" class="button">Noun</a>-->
+<!---->
+
+</div>
+</div>
+<a href="#" onclick="window.print();return false;">Распечатать</a>
+<!--    <iframe name="print_frame" width="1" height="1" border="0" src="about:blank"></iframe>-->
+
+
+<script>
+    function callPrint() {
+        var printCSS = '<link rel="stylesheet" href="css/print.css" type="text/css" />';
+        var printTitle = document.getElementById('print-title').innerHTML;
+        // var printImg = document.getElementById('print-img').innerHTML;
+        // var printText = document.getElementById('print-text').innerHTML;
+        var windowPrint = window.open('','','left=200,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0');
+        // windowPrint.document.write(printCSS);
+        windowPrint.document.write(printTitle);
+        windowPrint.document.write(printImg);
+        windowPrint.document.write(printText);
+        windowPrint.document.close();
+        windowPrint.focus();
+        windowPrint.print();
+        windowPrint.close();
+    }
+</script>
+
+
+
+</body>
+</html>

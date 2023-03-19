@@ -1,0 +1,300 @@
+@font-face {
+    font-family: Montserrat;
+    /* Гарнитура шрифта */
+    src: url("../src/fonts/Montserrat-Regular.ttf");
+    /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Digital Numbers;
+    /* Гарнитура шрифта */
+    src: url("../src/fonts/DigitalNumbers-Regular.ttf");
+    /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Days One;
+    /* Гарнитура шрифта */
+    src: url("../src/fonts/DaysOne-Regular.ttf")
+        /* Путь к файлу со шрифтом */
+}
+
+.champ {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.verh {
+    position: relative;
+    margin-top: -100vh;
+}
+
+body {
+    background-image: url("../img/Group 2.png");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.name-border {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    height: 15vh;
+    /*padding-right: -110px;*/
+    width: 38vw;
+    text-align: center;
+    margin-left: 50px;
+
+
+
+
+}
+.top1 {
+
+    /*margin-left: 100px;*/
+
+
+
+}
+.name-border1 {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    height: 15vh;
+    /*padding-right: -110px;*/
+    width: 38vw;
+    text-align: center;
+    margin-left: 200px;
+
+
+}
+
+.name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 95.4%;
+    /* or 86px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width:min-content;
+    color: #000000;
+}
+
+.white {
+    background: #ffffff;
+    border: 20px solid #ffffff;
+    border-radius: 15px;
+    height: 19vh;
+}
+.yellow {
+    background: #e98502;
+    border: 20px solid #FFFFFF;
+    border-radius: 15px;
+    height: 19vh;
+}
+.red {
+    background: #e90202;
+    border: 20px solid #FFFFFF;
+    border-radius: 15px;
+    height: 19vh;
+}
+.green {
+    background: #22ff00;
+    border: 2px solid #FFFFFF;
+    border-radius: 1px;
+    height: 2vh;
+}
+
+.chet {
+    background: #ffffff;
+    border-radius: 15px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 400px;
+    line-height: 488px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+    height: 44vh;
+
+}
+
+.white-bord {
+    background: #FFFFFF;
+    border-radius: 23px;
+    height: auto;
+    width: auto;
+}
+
+.time {
+    max-width: max-content;
+
+    font-family: 'Digital Numbers';
+    font-style: normal;
+
+    font-size: 400px;
+    font-weight: bold;
+    line-height: 103px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #000000;
+}
+
+.score {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 183px;
+
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.num-round {
+    font-weight: 900;
+}
+
+.cat {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+
+    align-items: center;
+    text-align: center;
+    width: max-content;
+    color: #ffffff;
+
+}
+
+.country{
+    font-family: 'Days One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 145px;
+    line-height: 135px;
+    display: block;
+    position: relative;
+    left: -50px;
+
+
+    height: 100px;
+    width: 500px;
+    /*color: #FFFFFF;*/
+
+
+
+
+
+    color: #ffffff;
+    /*height: 44vh;*/
+}
+
+.test {
+    height: 2vh !important;
+    margin-top: 80px;
+}
+
+.mont {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 73px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.tablo1{
+    width: 200px;
+    height: 65px;
+    margin-left: 280px;
+    margin-top: 235px;
+    border-radius: 15px;
+    background-color: crimson;
+    color: #FFFFFF;
+    
+ 
+}
+.gender{
+    border-radius: 15px;
+    background-color: white;
+    width: 250px;
+    height: 110px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.weight-category{
+    border-radius: 15px;
+    background-color: white;
+    width: 250px;
+    height: 110px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.timer{
+    width: 400px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    border-radius: 15px;
+    background-color: white;
+}
+.timer-text{
+    text-align: center;
+    font-size: 122px;
+    font-weight: bold;
+}
+.fio{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 115px;
+    /*font-size: clamp(115px, 7vw, 122px);*/
+
+    line-height: 73px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    line-height: 0.8;
+
+    color: #000000;
+}
+.fio-box{
+    height: 210px;
+    width: 40vw;
+
+
+
+}
+.down{
+    margin-top: 40px;
+}
+

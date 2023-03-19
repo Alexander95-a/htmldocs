@@ -1,0 +1,47 @@
+table {
+
+    width: 400px;
+
+    border-collapse: collapse;
+
+    border: 2px solid black;
+
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #606060;
+    color: #fff;
+    border-collapse: collapse;
+
+    border: 2px solid black
+}
+
+
+
+
+td {
+
+
+    padding: 3px;
+
+    border: 1px solid ;
+
+    text-align: center;
+
+}
+
+@media print {
+
+    #head {
+        display: flex;
+    }
+    #printableTable {
+        display: block;
+    }
+
+}
